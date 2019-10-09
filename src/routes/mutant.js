@@ -6,12 +6,8 @@ const mutant = require("../lib/mutant");
 router.post("/", (req, res) => {
     const {dna} = req.body;
 
-    if(mutant.isMutant(dna)){
-        res.send();
-    }
-    else{
-        res.status(403).send();
-    }
+    res.send(mutant.isMutant(dna));
+    
 });
 
 module.exports = router;
