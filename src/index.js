@@ -2,6 +2,18 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const path = require("path");
+const mongoose = require('mongoose');
+
+mongoose.set('useFindAndModify', false);
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect('mongodb+srv://xuser:z4izKCqzFZz0i4XT@cluster0-mzftp.gcp.mongodb.net/test?retryWrites=true&w=majority', {
+  useCreateIndex: true,
+  useNewUrlParser: true
+})
+  .then(db => console.log('DB is connected'))
+  .catch(err => console.error(err));
+
+//z4izKCqzFZz0i4XT
 
 //settings
 app.set("port", process.env.PORT || 3000);
