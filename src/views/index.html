@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <title>X-MEN</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Consultar mutante</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="dna">DNA</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <textarea name="dna" id="dna" cols="30" rows="10" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button id="btnConsultar" type="button" class="btn btn-primary btn-block">Consultar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#btnConsultar").click(function(event){
+                $.ajax({
+                    url: "/mutant",
+                    type: "post",
+                    contentType: "application/json",
+                    data: $("#dna").val(),
+                    success: (function(data){
+                        alert("MUTANTE");
+                    }),
+                    error: function(error){
+                        if(error.status == 403){
+                            alert("NO MUTANTE");
+                        }
+                        else{
+                            alert("NO SE PUDO REALIZAR LA CONSULTA");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

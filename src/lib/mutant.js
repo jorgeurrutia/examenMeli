@@ -10,6 +10,12 @@ function isMutant(dna){
            var horizontal = 0;
            var posicionCadena = 0;
            while(dna[posicionArreglo].length > posicionCadena){
+               if(dna[posicionArreglo].length != 6){
+                   return false;
+               }
+               if(dna[posicionArreglo][posicionCadena] != "A" && dna[posicionArreglo][posicionCadena] != "T" && dna[posicionArreglo][posicionCadena] != "C" && dna[posicionArreglo][posicionCadena] != "G"){
+                   return false;
+               }
                // Secuencia de horizontales
                if(posicionCadena == 0 || dna[posicionArreglo][posicionCadena] == dna[posicionArreglo][posicionCadena - 1]){
                    horizontal++;
@@ -61,17 +67,15 @@ function isMutant(dna){
                     }else{
                         oblicuo[posicion] = 1;
                     }
-                    
-                    
                }
                posicionCadena++;
            }
            posicionArreglo++;
        }
-       return "secuencias: " + secuencias;
+       return secuencias > 1;
    }
    else{
-       return -1;
+       return false;
    }
 }
 
