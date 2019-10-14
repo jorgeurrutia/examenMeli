@@ -71,7 +71,9 @@ Responde el número de mutantes ingresados, número de humanos ingresados y la p
 
 #### Response
 ```
+{
 "count_mutant_dna":7
 "count_human_dna":9
 "ratio":0.7777777777777778
-
+}
+```
