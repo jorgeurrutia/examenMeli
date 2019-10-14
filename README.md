@@ -1,7 +1,6 @@
 # README
 
-Este es el código fuente de la solución creada para el examen de MELI.
-La solución contempla una pagina web el cual es posible realizar consultas de ADN, ingresando en un area de texto una cadena en formato JSON y en una API con un POST el que permite ingresar una cadena de ADN para validar si es mutante o humano, un GET que devuelve el conteo de humanos, mutantes y propoción de estos.
+El adjunto es el código fuente de la solución creada para el examen de MELI, el cual contempla una pagina web en donde es posible realizar consultas de ADN, ingresando en un area de texto una cadena en formato JSON, y en una API con un POST el que permite ingresar una cadena de ADN para validar si es mutante o humano, un GET que devuelve el conteo de humanos, mutantes y propoción de estos.
 
 ## WEB
 
