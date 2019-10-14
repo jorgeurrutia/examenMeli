@@ -35,7 +35,7 @@ DNA; Cadena DNA en formato JSON. Debe contener un arreglo de 6 cadenas de texto,
 
 #### Response
 ```
-Status; Si la cadena ingresada es mutante devuelve status 200 OK, si es humano devuelve estatus 403 Forbibben
+Status; Si la cadena ingresada es mutante devuelve status 200 OK, si es humano devuelve estatus 403 Forbidden
 ```
 
 ### Example
